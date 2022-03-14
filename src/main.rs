@@ -200,15 +200,15 @@ fn main() {
         // Check if the order is empty
         if order.chicken_count == 0 && order.tofu_count == 0 && order.rice_count == 0 {
             println!("Your order is empty!");
+        } else {
+            println!("This is order no. {}", van_binh.get_orders_count());
+            println!(
+                "There you go: {}, it's going to be {} zł",
+                order,
+                order.total()
+            );
+            van_binh.increase_orders_count();
         }
-
-        println!("This is order no. {}", van_binh.get_orders_count());
-        println!(
-            "There you go: {}, it's going to be {} zł",
-            order,
-            order.total()
-        );
-        van_binh.increase_orders_count();
     }
     println!("Bye!");
 }
