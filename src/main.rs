@@ -21,7 +21,7 @@ impl Dish {
 const TAKEAWAY_FEE: u32 = 1;
 
 #[derive(Debug, Clone)]
-struct Order{
+struct Order {
     takeaway: bool,
     chicken_count: u32,
     tofu_count: u32,
@@ -112,7 +112,10 @@ impl VanBinh {
     }
 
     fn add_customer(&mut self, name: String, favorite_order: Order) {
-        self.customers.push(Customer{ name, favorite_order });
+        self.customers.push(Customer {
+            name,
+            favorite_order,
+        });
     }
 
     fn get_saved_customer(&self, name: &str) -> Option<&Customer> {
